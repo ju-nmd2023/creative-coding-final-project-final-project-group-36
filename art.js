@@ -47,4 +47,20 @@ function draw() {
     }
     endShape();
   }
+  
+noStroke();
+fill(0, 0, 100, 80);
+textAlign(CENTER);
+textSize(14);
+text(
+  "Press any key to shift red glow",
+  width / 2,
+  height - 20
+);
 }
+
+function keyPressed() {
+  background(random(0, 10), 100, 30);
+  t += random(0.5, 2);
+}
+
