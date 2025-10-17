@@ -35,5 +35,16 @@ function draw() {
       pop();
     }
   }
+  noFill();
+  for (let i = 0; i < 4; i++) {
+    stroke(180 + i * 20, 100, 100, 50);
+    strokeWeight(2);
+    beginShape();
+    for (let x = 0; x < width; x += 10) {
+      let y =
+        height / 2 + sin(x * 0.02 + t + i) * 40 + noise(x * 0.01, t * 0.3) * 50;
+      vertex(x, y);
+    }
+    endShape();
+  }
 }
-
