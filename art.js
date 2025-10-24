@@ -8,9 +8,7 @@ function setup() {
 }
 
 function draw() {
-  t += 0.02;
-}
- function draw() {
+  // Gradient background
   for (let i = 0; i < height; i++) {
     let inter = map(i, 0, height, 0, 1);
     let c = lerpColor(color(250, 40, 10), color(300, 70, 40), inter);
@@ -20,6 +18,7 @@ function draw() {
 
   t += 0.02;
 
+  // Rotating glowing squares
   for (let y = 0; y < height; y += 100) {
     for (let x = 0; x < width; x += 100) {
       push();
@@ -35,6 +34,8 @@ function draw() {
       pop();
     }
   }
+
+  // Wavy glowing lines
   noFill();
   for (let i = 0; i < 4; i++) {
     stroke(180 + i * 20, 100, 100, 50);
@@ -47,20 +48,18 @@ function draw() {
     }
     endShape();
   }
-  
-noStroke();
-fill(0, 0, 100, 80);
-textAlign(CENTER);
-textSize(14);
-text(
-  "Press any key to shift red glow",
-  width / 2,
-  height - 20
-);
+
+  // Text
+  noStroke();
+  fill(0, 0, 100, 80);
+  textAlign(CENTER);
+  textSize(14);
+  text("Press any key to shift red glow", width / 2, height - 20);
 }
 
 function keyPressed() {
   background(random(0, 10), 100, 30);
   t += random(0.5, 2);
 }
+
 
